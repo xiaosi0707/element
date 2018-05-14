@@ -1,0 +1,17 @@
+@function rem($px) {
+  @return $px / 46.875 + rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666666;
+}
+html, body {
+  font-size: rem(40);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
