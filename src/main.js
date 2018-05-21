@@ -14,6 +14,11 @@ Vue.use(ElementUI, VueAwesomeSwiper)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
+axios.create({
+  headers: {
+    'Content-Type': 'application/wyunei'
+  }
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
