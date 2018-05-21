@@ -3,7 +3,7 @@
     <div class="search">
       <router-link tag="span" :to="{path: '/search', query:{geohash: searchGeohash}}">搜索</router-link>
       <span>吉利大学</span>
-      <span>个人</span>
+      <router-link to="/account-info">人</router-link>
     </div>
     <div class="swiper">
       <swiper :options="swiperOption" ref="mySwiper">
@@ -28,10 +28,10 @@
 
   <div class="nearby">
     <p>附近商家</p>
-    <dl v-for="(item, index) in nearbyBus" :key="index">
+    <router-link tag="dl" :to="{ name: 'Shop', params: { shopid: item.id }}" v-for="(item, index) in nearbyBus" :key="index">
       <dt><img :src="'http://elm.cangdu.org/img/' + item.image_path" alt=""></dt>
       <dd>{{ item.name }}</dd>
-    </dl>
+    </router-link>
   </div>
   </div>
 </template>
@@ -95,6 +95,7 @@ export default {
         longitude: longitude
       }
     }).then((res) => {
+      console.log(res)
       this.nearbyBus = res.data
     })
   },
@@ -133,6 +134,9 @@ export default {
       float: right;
       padding-right: rem(12);
     }
+  }
+  a {
+    color: white;
   }
 
 }

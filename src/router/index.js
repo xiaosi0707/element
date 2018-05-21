@@ -5,6 +5,10 @@ import Address from '@/components/address'
 import Index from '@/components/index'
 import Search from '@/components/search'
 import Classify from '@/components/classify'
+import Shop from '@/components/shop'
+import accountInfo from '@/components/account-info'
+import My from '@/components/my'
+import Login from '@/components/login'
 
 Vue.use(Router)
 
@@ -34,6 +38,26 @@ export default new Router({
       path: '/classify/:latitude?/:longitude?/:classifyId?',
       name: 'Classify',
       component: Classify
+    },
+    {
+      path: '/shop/:shopid?',
+      name: 'Shop',
+      component: Shop
+    },
+    {
+      path: '/account-info',
+      name: 'accountInfo',
+      component: accountInfo
+    },
+    {
+      path: '/my',
+      name: 'My',
+      component: My
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

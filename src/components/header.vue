@@ -2,6 +2,7 @@
   <header>
     <span @click="back">返回</span>
     <p>{{ val }}</p>
+    <router-link to="/account-info">人</router-link>
   </header>
 </template>
 
@@ -38,8 +39,16 @@ header {
   color: white;
   position: relative;
   span {
+    &:first-child {
+      position: absolute;
+      left: rem(24);
+    }
+  }
+  a {
+    color: white;
     position: absolute;
-    left: rem(24);
+    right: rem(24);
+    top: 0;
   }
   p {
     width: 100%;
